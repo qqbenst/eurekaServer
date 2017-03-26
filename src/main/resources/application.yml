@@ -1,14 +1,6 @@
-server:
-  port: 8080
 spring:
   application:
-    name: server-01
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8080/eureka/
-    register-with-eureka: false
-    fetch-registry: false
-  instance:
-    metadataMap:
-      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    name: eureka-server
+  cloud:
+    config:
+     uri: http://172.17.0.2:8080
